@@ -2,14 +2,14 @@
 - Desc:<br>
 Spring Boot 2 整合 Dubbo 的一个小 Demo;
 
-##1. 创建一个Maven父工程springboot2-dubbo-demo：
+## 1. 创建一个Maven父工程springboot2-dubbo-demo：
 以Intellij IDEA 为例:
 File->New->Project-Maven,直接Next,
 ![创建Maven](/images/1.png)
 填写GroupId,ArtifactId;
 ![组织信息](/images/2.png)
 Next->Finish.
-##2. 创建子模块:
+## 2. 创建子模块:
 在创建的父工程项目名字上右击New->Module-Maven(或者用Spring Initialize创建一个Spring Boot模块,然后再改);
 创建三个Module,分别为:
 
@@ -17,9 +17,9 @@ springboot-dubbo-api|springboot-dubbo-provider|springboot-dubbo-consumer
 ---|---|---
 存放API接口、Entity等|Dubbo服务提供者|Dubbo服务消费者、Web等|
 
-##3. 修改项目pom文件结构;
+## 3. 修改项目pom文件结构;
 
-##4. 导入Dubbo依赖:
+## 4. 导入Dubbo依赖:
 ```xml
 <dependency>
     <groupId>com.alibaba.boot</groupId>
@@ -34,7 +34,7 @@ versions|	Java|	Spring Boot|	Dubbo
 0.2.0|	1.8+|	2.0.x|	2.6.2 +
 0.1.1|	1.7+|	1.5.x|	2.6.2 +
 
-##5. 定义API接口:
+## 5. 定义API接口:
 在springboot-dubbo-api模块中新增一个接口:
 ```java
 public interface DemoService {
@@ -46,7 +46,7 @@ public interface DemoService {
     String sayHello(String name);
 }
 ```
-##6. 提供Provider服务:
+## 6. 提供Provider服务:
 1-实现DemoService接口:
 ```java
 @Service // 注意这个是dubbo的service注解,com.alibaba.dubbo.config.annotation.Service
@@ -72,7 +72,7 @@ dubbo.registry.address=zookeeper://localhost:2181 #这个为自己的zookeeper�
 dubbo.provider.timeout=1000
 ```
 配置完成,启动服务;
-##7. 编写消费者Consumer:
+## 7. 编写消费者Consumer:
 1-引入API依赖关系:
 ```xml
 <!-- 引入API -->
