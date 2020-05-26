@@ -15,6 +15,6 @@ FROM openjdk:8u212-jdk-alpine3.9 as prod
 
 WORKDIR /usr/local/
 
-COPY --from=0 /usr/local/dubbo-demo/springboot-dubbo-consumer/target/springboot-dubbo-consumer-0.0.1-SNAPSHOT.jar .
+COPY --from=0 /usr/local/build/springboot-dubbo-consumer/target/springboot-dubbo-consumer-0.0.1-SNAPSHOT.jar .
 
 CMD ["java","-jar","springboot-dubbo-consumer-0.0.1-SNAPSHOT.jar"]
