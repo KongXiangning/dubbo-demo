@@ -10,6 +10,7 @@ import com.xudc.dubbo.api.service.DemoService;
 
 @Service
 public class DemoServiceImpl implements DemoService {
+
     /**
      * say Hello.
      *
@@ -18,6 +19,7 @@ public class DemoServiceImpl implements DemoService {
      */
     @Override
     public String sayHello(String name) {
-        return "Hello, " + name + " (from Spring Boot)";
+        System.out.println("sayHello services are called");
+        return "Hello, " + name + " (running k8s)";
     }
 }

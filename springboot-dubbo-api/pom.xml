@@ -6,7 +6,7 @@
         <groupId>com.xudc</groupId>
         <artifactId>springboot2-dubbo-demo</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <!--<groupId>com.xudc</groupId>-->
     <artifactId>springboot-dubbo-api</artifactId>
