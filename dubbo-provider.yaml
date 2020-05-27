@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dubbo-provider
-          image: dubbo-provider:v1.0
+          image: 192.168.1.231:5000/dubbo/dubbo-provider:v1.0
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
