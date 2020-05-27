@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dubbo-provider
+  namespace: dubbo-demo
+  labels:
+    app: dubbo-provider
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dubbo-provider
+  template:
+    metadata:
+      labels:
+        app: dubbo-provider
+    spec:
+      containers:
+        - name: dubbo-provider
+          image: dubbo-provider:v1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 20080
+              protocol: TCP
+          livenessProbe:
+            failureThreshold: 3
+            tcpSocket:
+              port: 20080
+            initialDelaySeconds: 10
+            periodSeconds: 20
+            successThreshold: 1
+            timeoutSeconds: 20
+          readinessProbe:
+            failureThreshold: 3
+            tcpSocket:
+              port: 20080
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 10
